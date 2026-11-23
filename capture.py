@@ -111,7 +111,7 @@ while(True):
         cv2.imshow('frame',frame)
     else:
         num_frames += 1
-        if num_frames == 150: # 5 frames at 30fps so start up doesn't change timing
+        if num_frames == 150: # 5 seconds at 30fps so start up doesn't change timing
             start_run = time.perf_counter()
         if time.perf_counter() - start_run > run_sec:
             break

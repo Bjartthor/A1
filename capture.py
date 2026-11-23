@@ -73,7 +73,6 @@ brightest_spot_time = 0
 iteration = 0
 
 Show_display = True
-
 run_sec = 10
 num_frames = 0
 start_run = time.perf_counter()
@@ -82,7 +81,7 @@ start_run = time.perf_counter()
 while(True):
     ret, frame = cap.read()
 
-    #start_time = time.perf_counter()
+    start_time = time.perf_counter()
 
     brightest_loc_opencv = find_brightest_spot_opencv(frame)
 
@@ -90,9 +89,9 @@ while(True):
 
     #brightest_loc_numpy = find_brightest_spot_numpy(frame)
 
-    #end_time = time.perf_counter()
-    #brightest_spot_time += end_time-start_time
-    #iteration += 1
+    end_time = time.perf_counter()
+    brightest_spot_time += end_time-start_time
+    iteration += 1
     
     reddest_bgr_loc = find_reddest_bgr(frame)
 
